@@ -1,0 +1,19 @@
+# Core LangChain & Ollama orchestration
+langchain>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+langchain-ollama>=0.2.0,<0.3.0
+langchain-chroma>=0.2.0,<0.3.0
+
+# Vector storage & embeddings
+chromadb>=0.5.0
+
+# Database & SQL safety
+SQLAlchemy>=2.0.0
+sqlglot>=25.0.0
+
+# User Interface
+streamlit>=1.35.0
+
+# Testing & Dev
+pytest>=8.0.0
+Flask>=2.0.0

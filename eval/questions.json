@@ -1,0 +1,27 @@
+[
+  {
+    "question": "List all artists.",
+    "sql": "SELECT * FROM Artist;",
+    "db": "chinook"
+  },
+  {
+    "question": "How many tracks are there in total?",
+    "sql": "SELECT COUNT(*) AS track_count FROM Track;",
+    "db": "chinook"
+  },
+  {
+    "question": "Top 5 customers by total spending.",
+    "sql": "SELECT CustomerId, SUM(Total) AS total_spent FROM Invoice GROUP BY CustomerId ORDER BY total_spent DESC LIMIT 5;",
+    "db": "chinook"
+  },
+  {
+    "question": "Which artists have tracks sold in Germany?",
+    "sql": "SELECT DISTINCT Artist.Name FROM Artist JOIN Album ON Artist.ArtistId = Album.ArtistId JOIN Track ON Album.AlbumId = Track.AlbumId JOIN InvoiceLine ON Track.TrackId = InvoiceLine.TrackId JOIN Invoice ON InvoiceLine.InvoiceId = Invoice.InvoiceId WHERE Invoice.BillingCountry = 'Germany';",
+    "db": "chinook"
+  },
+  {
+    "question": "Revenue means InvoiceLine.UnitPrice * Quantity.",
+    "sql": "SELECT SUM(InvoiceLine.UnitPrice * InvoiceLine.Quantity) AS revenue FROM InvoiceLine;",
+    "db": "chinook"
+  }
+]
